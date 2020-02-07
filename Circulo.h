@@ -1,6 +1,5 @@
 #include <typeinfo>
 
-#include <string>
 using namespace std;
 
 #ifndef CIRCULO_H
@@ -10,8 +9,10 @@ class Circulo{
 	
 	private: 
 		
-		int radio,diametro,circumferencia,area;
-		float CalcularCircumferencia();
+		int radio,diametro;
+		float circumferencia;
+		double area;
+		float CalcularCircumferencia(int);
 
 	public: 
 
@@ -27,7 +28,9 @@ class Circulo{
 		float getCircumferencia();
 		void setCircumferencia(float);
 
-		float CalcularArea();
+		float Area();
+
+		~Circulo();
 };
 
 #endif

@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Triangulo.h"
+#include "Circulo.h"
+
 using namespace std;
 
 int menu(){
@@ -60,18 +62,51 @@ int main(){
 
 				int a,b,c;
 				Triangulo *triangular;
+
 				cout<<"Ingrese el primer lado: ";
 				cin>>a;
+				while(a<=0){
+					cout<<"El valor del primer lado no puede ser cero o negativo\n\n";
+					cout<<"Ingrese el primer lado: ";
+					cin>>a;
+				}//Valida el valor del primer lado
+
 				cout<<"Ingrese el segundo lado: ";
 				cin>>b;
+
+				while(b<=0){
+					cout<<"El valor del segundo lado no puede ser cero o negativo\n\n";
+					cout<<"Ingrese el valor del segundo lado: ";
+					cin>>b;
+				}//Valida que el segundo lado sea valido
+
 				cout<<"Ingrese el tercer lado: ";
 				cin>>c;
+				while(c<=0){
+					cout<<"El valor del tercer lado no puede ser cero o negativo\n\n";
+					cout<<"Ingrese el tercer lado: ";
+					cin>>c;
+				}//Valida que el valor del tercer lado sea valido
+
 				triangular=new Triangulo(a,b,c);
 
 				cout<<"El area del triangulo es: "<<triangular->Area()<<"\n\n";
 				delete triangular;
 
 			break;}//Fim del caso do s
+
+			case 3:{
+
+				int radio;
+				cout<<"Ingrese el radio: ";
+				cin>>radio;
+				Circulo *circular;
+				circular=new Circulo(radio);
+				
+				cout<<"El area del criculo es: "<<circular->Area()<<"\n\n\n";
+				delete circular;
+
+			break;}
 
 			default:{
 				cout<<"Opcion no valida\n\n\n";
