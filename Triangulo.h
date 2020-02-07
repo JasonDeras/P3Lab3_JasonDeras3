@@ -1,32 +1,40 @@
 #include <typeinfo>
 
-#include <string>
-using namespace std;
-
 #ifndef TRIANGULO_H
 #define TRIANGULO_H
 
+using namespace std;
+
+
 class Triangulo{
 	
-	private: 
+	private:
 		
-		int a,b,c,s,area;
+		int a, b, c;
+		int altura;
+		double area;
+		double Calcular(int,int,int);
 
-	public: 
+	public:
 
 		Triangulo();
-		Triangulo(int, int, int);
+		Triangulo(int,int,int);
 
 		int getA();
 		void setA(int);
 
 		int getB();
-		void setB(int);
+        void setB(int);
 
 		int getC();
-		void setC();
+        void setC(int);
 
-		int CalcularArea();
+        int getAltura();
+        void setAltura(int);
+
+        double Area();
+
+		~Triangulo();
+	
 };
-
 #endif

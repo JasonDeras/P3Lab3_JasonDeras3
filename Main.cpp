@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include "Triangulo.h"
 using namespace std;
 
 int menu(){
@@ -40,7 +40,7 @@ void Ejercicio1(){
 	}while( numero > triangular  );
 
 	cout<<"El numero traingular previo es:" <<anterior<<"\n\n\n";
-	
+
 }//Fin del Ejercicio 1
 
 int main(){
@@ -56,9 +56,26 @@ int main(){
 				Ejercicio1();
 			break;}
 
-			default:
+			case 2:{
+
+				int a,b,c;
+				Triangulo *triangular;
+				cout<<"Ingrese el primer lado: ";
+				cin>>a;
+				cout<<"Ingrese el segundo lado: ";
+				cin>>b;
+				cout<<"Ingrese el tercer lado: ";
+				cin>>c;
+				triangular=new Triangulo(a,b,c);
+
+				cout<<"El area del triangulo es: "<<triangular->Area()<<"\n\n";
+				delete triangular;
+
+			break;}//Fim del caso do s
+
+			default:{
 				cout<<"Opcion no valida\n\n\n";
-			break;
+			break;}
 		}//Fin del case
 
 		cout<<"Desea volver al menu[1.-Si/2.-No]: ";
