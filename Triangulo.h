@@ -15,7 +15,7 @@ class Triangulo{
 	public: 
 
 		Triangulo();
-		Triangulo(int, int, int,);
+		Triangulo(int, int, int);
 
 		int getA();
 		void setA(int);
@@ -24,7 +24,7 @@ class Triangulo{
 		void setB(int);
 
 		int getC();
-		void setC;
+		void setC();
 
 		int CalcularArea();
 };
